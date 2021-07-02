@@ -1,11 +1,53 @@
 {
   "name": "siremy1.10",
   "version": "1.0.0",
+  "private": true,
   "description": "Sistema de Registro de Movilización de Yaracuy 1 por 10",
-  "main": "index.js",
+  "author": {
+    "name": "Ana Verde"
+  },
   "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "index.js",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "tailwindcss": "^1.1.2",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@ianaya89/vue-cli-plugin-tailwind": "~1.1.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "_id": "siremy1.10@1.0.0",
   "keywords": [
     "sistema",
     "registro",
@@ -13,6 +55,6 @@
     "movilizacion",
     "yaracuy"
   ],
-  "author": "Ana Verde",
-  "license": "MIT"
+  "license": "MIT",
+  "readme": "ERROR: No README data found!"
 }
