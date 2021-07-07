@@ -9,7 +9,13 @@
       border border-solid
     "
   >
-    <slot></slot>
+    <input
+      :class="{ 'has-val': modelValue }"
+      class="input block w-full font-montserrat-reg leading-1.2"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      v-bind="$attrs"
+    />
     <span
       class="
         focus-input
@@ -44,11 +50,23 @@
 export default {
   name: 'SInput',
   props: {
-    label: String,
+    label: {
+      type: String,
+      default: '',
+    },
+    modelValue: {
+      type: [String, Number],
+      default: '',
+    },
   },
 }
 </script>
 
 <style scoped>
 @import '../assets/css/styles-1.css';
+
+.alert::before {
+  background-color: #fff;
+  border: 1px solid #c80000;
+}
 </style>
