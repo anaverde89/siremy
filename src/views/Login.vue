@@ -36,58 +36,12 @@
               "
               >SIREMY</span
             >
-            <s-input label="Email">
-              <input
-                type="text"
-                :class="{ 'has-val': email }"
-                class="input block w-full font-montserrat-reg leading-1.2"
-                name="email"
-                v-model="email"
-              />
-              <!-- <p v-if="reqEmail" class="text-red-500 font-poppins-reg text-sm">
-                Campo requerido
-              </p> -->
-            </s-input>
-            <s-input label="Contraseña">
-              <input
-                type="password"
-                :class="{ 'has-val': password }"
-                class="
-                  input
-                  block
-                  w-full
-                  h-full
-                  bg-transparent
-                  font-montserrat-reg
-                  leading-1.2
-                "
-                name="password"
-                v-model="password"
-              />
-            </s-input>
+            <s-input label="Email" v-model="email" type="text" />
+            <s-input label="Contraseña" v-model="password" type="password" />
             <div
               class="flex justify-between items-center w-full"
               style="padding-top: 3px; padding-bottom: 32px"
             >
-              <div v-if="false">
-                <input
-                  type="checkbox"
-                  name="rememberme"
-                  id="chkb1"
-                  class="input-checkbox"
-                />
-                <label
-                  for="chkb1"
-                  class="
-                    label-checkbox
-                    font-poppins-reg
-                    block
-                    relative
-                    cursor-pointer
-                  "
-                  >Remember me</label
-                >
-              </div>
               <div>
                 <a href="#" class="txt1 font-poppins-reg"
                   >¿Olvidaste tu contraseña?</a
@@ -132,7 +86,15 @@ export default {
       return re.test(email)
     },
     onSubmit() {
+      if (!this.email || !this.password) {
+        alert('Los campos Email y Password son requeridos')
+        return
+      }
       let validEmail = this.validEmail(this.email)
+      if (!validEmail) {
+        alert('Debe ingresar un correo electrónico valido')
+        return
+      }
       let user = {
         email: this.email,
         validEmail: validEmail,
