@@ -44,7 +44,7 @@
 export default {
   name: 'SInput',
   props: {
-    label: String,
+    label: { type: String, default: '' },
   },
 }
 </script>

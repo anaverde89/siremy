@@ -1,6 +1,7 @@
 <template>
   <div class="w-full flex flex-wrap justify-center">
     <button
+      @click="$emit('custom-click')"
       class="
         login-form-btn
         flex

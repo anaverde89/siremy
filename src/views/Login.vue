@@ -21,7 +21,10 @@
             flex-row-reverse
           "
         >
-          <form class="login-form min-h-screen block">
+          <form
+            @submit.prevent="onSubmit"
+            class="login-form min-h-screen block"
+          >
             <span
               class="
                 login-form-title
@@ -41,6 +44,9 @@
                 name="email"
                 v-model="email"
               />
+              <!-- <p v-if="reqEmail" class="text-red-500 font-poppins-reg text-sm">
+                Campo requerido
+              </p> -->
             </s-input>
             <s-input label="Contraseña">
               <input
@@ -88,7 +94,7 @@
                 >
               </div>
             </div>
-            <s-button label="Iniciar Sesión" />
+            <s-button @custom-clic="onSubmit" label="Iniciar Sesión" />
           </form>
           <div
             class="login-more bg-no-repeat bg-cover bg-center relative"
@@ -109,15 +115,42 @@ export default {
     return {
       email: '',
       password: '',
+      // reqEmail: false,
+      // reqPassword: false,
     }
   },
   components: {
     SInput,
     SButton,
   },
+  methods: {
+    validEmail(email) {
+      let re =
+        // eslint-disable-next-line no-useless-escape
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
+
+      return re.test(email)
+    },
+    onSubmit() {
+      let validEmail = this.validEmail(this.email)
+      let user = {
+        email: this.email,
+        validEmail: validEmail,
+        pwd: this.password,
+      }
+      this.email = ''
+      this.password = ''
+      console.log(user)
+    },
+  },
 }
 </script>
 
 <style scope>
 @import '../assets/css/styles-1.css';
+
+.alert {
+  background-color: #fff;
+  border: 1px solid #c80000;
+}
 </style>
