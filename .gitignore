@@ -23,10 +23,10 @@ pnpm-debug.log*
 *.sw?
 
 # Fonts
-fonts/
-*.ttf
+# fonts/
+# *.ttf
 
 # Images
-*.png
-*.jpg
-*.ico
+# *.png
+# *.jpg
+# *.ico
