@@ -62,6 +62,8 @@
 <script>
 import SInput from '@/components/S-Input.vue'
 import SButton from '@/components/S-Button.vue'
+import swal from 'sweetalert'
+import api from '@/api'
 
 export default {
   name: 'Login',
@@ -69,6 +71,7 @@ export default {
     return {
       email: '',
       password: '',
+      result: false,
       // reqEmail: false,
       // reqPassword: false,
     }
@@ -87,12 +90,21 @@ export default {
     },
     onSubmit() {
       if (!this.email || !this.password) {
-        alert('Los campos Email y Password son requeridos')
+        //alert('Los campos Email y Password son requeridos')
+        swal('', 'Los campos Email y Password son requeridos', 'error', {
+          className: ['swal-text', 'swal-button'],
+        })
         return
       }
       let validEmail = this.validEmail(this.email)
       if (!validEmail) {
-        alert('Debe ingresar un correo electrónico valido')
+        //alert('Debe ingresar un correo electrónico valido')
+        swal({
+          title: '',
+          text: 'Debe ingresar un correo electrónico válido',
+          icon: 'error',
+          className: ['swal-text', 'swal-button'],
+        })
         return
       }
       let user = {
@@ -102,7 +114,12 @@ export default {
       }
       this.email = ''
       this.password = ''
-      console.log(user)
+      api
+        .sendUserData(user)
+        .then((resp) => (this.result = resp))
+        .catch((err) => err.message)
+
+      console.log(this.result)
     },
   },
 }
@@ -110,9 +127,13 @@ export default {
 
 <style scope>
 @import '../assets/css/styles-1.css';
-
-.alert {
-  background-color: #fff;
-  border: 1px solid #c80000;
+.swal-button {
+  font-family: Poppins-Black, sans-serif;
+  font-size: 18px;
+}
+.swal-text {
+  font-family: Poppins-Black, sans-serif;
+  font-size: 18px;
+  color: #333333;
 }
 </style>
