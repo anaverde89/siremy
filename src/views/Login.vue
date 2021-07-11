@@ -71,7 +71,7 @@ export default {
     return {
       email: '',
       password: '',
-      result: false,
+      result: { response: '', info: '' },
       // reqEmail: false,
       // reqPassword: false,
     }
@@ -88,7 +88,7 @@ export default {
 
       return re.test(email)
     },
-    onSubmit() {
+    async onSubmit() {
       if (!this.email || !this.password) {
         //alert('Los campos Email y Password son requeridos')
         swal('', 'Los campos Email y Password son requeridos', 'error', {
@@ -114,12 +114,27 @@ export default {
       }
       this.email = ''
       this.password = ''
-      api
-        .sendUserData(user)
-        .then((resp) => (this.result = resp))
-        .catch((err) => err.message)
 
-      console.log(this.result)
+      await api
+        .sendUserData(user)
+        .then((resp) => {
+          this.result = { ...resp }
+        })
+        .catch((err) => {
+          err
+        })
+
+      if (this.result.response === 'ok') {
+        if (this.result.info) {
+          swal('', 'Sesión iniciada', 'success')
+          this.$router.replace('dashboard')
+          //window.open(this.$router.resolve('dashboard').href)
+        } else {
+          swal('', 'Usuario y/o contaseña incorrecta', 'error')
+        }
+      } else if (this.result.response === 'error') {
+        swal(this.result.info, 'Intente más tarde', 'error')
+      }
     },
   },
 }
