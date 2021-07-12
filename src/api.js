@@ -5,12 +5,12 @@ const sendUserData = (data) => {
     .post('http://localhost/siremy/api.php', data, {
       'Content-Type': 'application/json',
     })
+    .then((response) => response.data)
     .then((response) => {
-      return response.data
+      return { response: 'ok', info: response.response }
     })
-    .then((response) => response.response)
     .catch((e) => {
-      console.log(e.message)
+      return { response: 'error', info: e.message }
     })
 }
 
