@@ -60,8 +60,8 @@
 </template>
 
 <script>
-import SInput from '@/components/S-Input.vue'
-import SButton from '@/components/S-Button.vue'
+import SInput from '@/components/login/S-Input.vue'
+import SButton from '@/components/login/S-Button.vue'
 import swal from 'sweetalert'
 import api from '@/api'
 
