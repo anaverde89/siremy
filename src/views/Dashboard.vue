@@ -1,10 +1,9 @@
 <template>
   <div
-    class="
-      app-container app-theme-white
-      body-tabs-shadow
-      fixed-sidebar fixed-header
-    "
+    :class="[
+      'app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header',
+      { 'closed-sidebar': !openMenu },
+    ]"
   >
     <div class="app-header header-shadow">
       <div class="app-header__logo">
@@ -66,6 +65,11 @@
         <btn-user :items="itemsMenu" :user="user"></btn-user>
       </div>
     </div>
+    <div class="app-main">
+      <div class="app-sidebar sidebar-shadow">
+        <sidebar></sidebar>
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>
@@ -77,7 +81,7 @@ import BtnHamburger from '@/components/dashboard/BtnHamburger'
 import TxtSearch from '@/components/dashboard/TxtSearch'
 import NavItem from '@/components/dashboard/NavItem'
 import BtnUser from '@/components/dashboard/BtnUser'
-
+import Sidebar from '@/components/dashboard/Sidebar'
 export default {
   data() {
     return {
@@ -118,6 +122,7 @@ export default {
     TxtSearch,
     NavItem,
     BtnUser,
+    Sidebar,
   },
   methods: {
     toggleClose() {
