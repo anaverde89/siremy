@@ -1,0 +1,14 @@
+.app-main__outer {
+  flex: 1;
+  z-index: 8;
+  transition: all 0.2s;
+  padding: var(--app-header-height) 0 0 var(--app-header-width);
+  @apply flex flex-col;
+}
+
+.app-main__inner {
+  flex: 1;
+  padding: var(--grid-gutter-width) var(--grid-gutter-width) 0;
+}
+
+@import './themes/main-white.css';

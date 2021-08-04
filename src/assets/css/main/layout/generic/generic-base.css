@@ -1,0 +1,9 @@
+a,
+button,
+.btn {
+  outline: none !important;
+}
+
+.app-container {
+  @apply flex min-h-screen flex-col m-0;
+}

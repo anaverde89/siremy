@@ -141,7 +141,7 @@ export default {
 </script>
 
 <style scope>
-@import '../assets/css/styles-1.css';
+@import '../assets/css/login.css';
 .swal-button {
   font-family: Poppins-Black, sans-serif;
   font-size: 18px;

@@ -1,0 +1,16 @@
+/* Header User Area */
+.header-btn-lg {
+  padding: 0 0 0 var(--layout-spacer-x);
+  margin-left: var(--layout-spacer-x);
+  @apply flex items-center relative;
+}
+.header-btn-lg .dropdown-toggle::after {
+  top: 50%;
+  right: -3px;
+  @apply absolute -mt-px;
+}
+.header-btn-lg .hamburger-inner,
+.header-btn-lg .hamburger-inner::before,
+.header-btn-lg .hamburger-inner::after {
+  @apply bg-gray-600;
+}

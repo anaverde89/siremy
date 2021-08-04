@@ -1,0 +1,54 @@
+/* Header Base */
+
+.app-header {
+  height: var(--app-header-height);
+  transition: all 0.2s;
+  @apply flex items-center content-center z-10 fixed w-full;
+}
+.app-header .logo-src {
+  @apply hidden;
+}
+.app-header.header-shadow {
+  box-shadow: var(--box-shadow-default);
+}
+.app-header .app-header__content {
+  flex: 1;
+  padding-left: var(--app-sidebar-width);
+  height: var(--app-header-height);
+  transition: all 0.2s;
+  @apply flex items-center content-center;
+}
+
+.app-header .app-header__content .app-header-left {
+  padding: 0 0 0 var(--layout-spacer-x);
+  @apply flex items-center;
+}
+
+.app-header .app-header__content .app-header-right {
+  padding: 0 var(--layout-spacer-x 0 0);
+  @apply items-center flex ml-auto;
+}
+
+.app-header .header-user-info > .widget-heading,
+.app-header .header-user-info > .widget-subheading {
+  @apply whitespace-nowrap;
+}
+.app-header .header-user-info > .widget-subheading {
+  font-size: var(--font-size-xs);
+}
+
+.app-header__menu,
+.app-header__mobile-menu {
+  padding: 0 var(--layout-spacer-x);
+  height: var(--app-header-height);
+  @apply hidden items-center;
+}
+
+/* Modifiers */
+
+@import 'modifiers/header-userarea.css';
+
+/* Header Themes */
+
+@import 'themes/header-light.css';
+@import 'themes/header-dark.css';
