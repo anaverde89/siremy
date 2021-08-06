@@ -1,0 +1,336 @@
+/* Responsive */
+
+@media only screen and (max-width: 1320px) {
+  .header-user-info {
+    display: none;
+  }
+}
+
+@media (max-width: var(--md)) {
+  .dropdown-menu::before,
+  .dropdown-menu::after {
+    display: none;
+  }
+
+  .app-sidebar {
+    transform: translateX(-(var(--app-sidebar-width-collapsed)));
+    box-shadow: 0 0 0 0 transparent;
+    padding-top: var(--app-header-height);
+    @apply fixed z-20;
+  }
+  .app-sidebar .app-header__logo {
+    display: none;
+  }
+  .closed-sidebar-md.closed-sidebar-open .app-sidebar {
+    transform: translateX(0);
+    box-shadow: var(--sidebar-box-shadow);
+  }
+
+  .app-main__outer {
+    padding-left: 0 !important;
+  }
+
+  .app-header {
+    justify-content: space-between;
+    z-index: 25;
+  }
+  .app-header .logo-src {
+    display: block;
+    order: 2;
+  }
+
+  .app-header .app-header__mobile-menu {
+    display: flex;
+    order: 1;
+  }
+
+  .app-header .app-header__menu {
+    display: flex;
+    order: 3;
+  }
+  .app-header .app-header__content {
+    visibility: hidden;
+    box-shadow: var(--box-shadow-default);
+    left: 5%;
+    width: 90%;
+    transition: all 0.2s;
+    background: var(--white);
+    border-radius: 50px;
+    padding: 0 10px !important;
+    @apply opacity-0 absolute top-0 overflow-hidden;
+  }
+  .app-header .app-header__content .app-header-left {
+    padding-left: 0;
+  }
+
+  .app-header .app-header__content .app-header-right {
+    padding-right: 0;
+  }
+  .app-header .app-header__content .header-btn-lg {
+    margin-left: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  .app-header .app-header__content .header-btn-lg .hamburger-box {
+    margin-top: 5px;
+  }
+  .app-header .app-header__content .header-btn-lg + .header-btn-lg {
+    display: none;
+  }
+  .app-header .app-header__content .app-header-left .nav {
+    display: none;
+  }
+  .app-header .app-header__menu {
+    display: flex;
+    order: 3;
+  }
+  .header-menu-open .app-header__content {
+    visibility: visible;
+    opacity: 1;
+    top: calc(var(--app-header-height) + 20);
+  }
+  .popover,
+  .dropdown-menu {
+    position: fixed !important;
+    z-index: 50;
+    left: 5% !important;
+    top: 50% !important;
+    width: 90% !important;
+    transform: translateY(-50%) !important;
+    min-width: 10px !important;
+  }
+  .popover .btn-icon-vertical .btn-icon-wrapper,
+  .dropdown-menu .btn-icon-vertical .btn-icon-wrapper {
+    display: none;
+  }
+  .popover {
+    max-width: initial;
+  }
+  .popover .arrow {
+    display: none !important;
+  }
+  .app-page-title {
+    text-align: center;
+  }
+
+  .app-page-title .page-title-heading,
+  .app-page-title .page-title-wrapper {
+    margin: 0 auto;
+    display: block;
+  }
+  .app-page-title .page-title-actions {
+    margin: calc(var(--grid-gutter-width) / 2) auto 0;
+  }
+  .app-page-title .page-title-actions .breadcrumb-item,
+  .app-page-title .page-title-subheading .breadcrumb-item,
+  .app-page-title .page-title-actions .breadcrumb,
+  .app-page-title .page-title-subheading .breadcrumb {
+    display: inline-block;
+  }
+  /* Footer */
+
+  .app-footer .app-footer__inner .app-footer-right {
+    display: none;
+  }
+  .app-footer .app-footer__inner .app-footer-left {
+    width: 100%;
+  }
+  .app-footer .app-footer__inner .app-footer-left .footer-dots {
+    margin: 0 auto;
+  }
+  /* Components */
+
+  .widget-content .widget-numbers {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .slick-slider-sm .slick-slider {
+    max-width: 650px !important;
+  }
+  .bg-transparent.list-group-item {
+    border-color: transparent;
+  }
+
+  .tabs-lg-alternate.card-header > .nav .nav-item .widget-number {
+    font-size: 1.5rem;
+  }
+
+  .page-title-head {
+    display: block;
+  }
+
+  .app-header.text-lighter .logo-src {
+    background: url('../../../../images/logo.png');
+  }
+
+  .app-header.text-lighter .app-header__menu > span .btn,
+  .app-header.text-lighter .app-header__menu > .btn {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .app-header.text-lighter .app-header__content {
+    background: var(--gray-800);
+  }
+}
+
+@media (min-width: var(--xs)) and (max-width: var(--md)) {
+  .app-page-title .page-title-icon,
+  .ui-theme-settings {
+    display: none;
+  }
+
+  .card-header.responsive-center {
+    padding: var(--layout-spacer-x);
+    @apply block text-center h-auto;
+  }
+  .card-header.responsive-center .nav,
+  .card-header.responsive-center .btn-actions-pane-right {
+    margin: calc(var(--layout-spacer-x) / 2) 0 0;
+  }
+  .card-header.responsive-center .nav .d-inline-block.ml-2,
+  .card-header.responsive-center .btn-actions-pane-right .d-inline-block.ml-2 {
+    width: 100% !important;
+    text-align: left;
+    margin: 0 !important;
+  }
+
+  .slick-slider-sm .slick-slider {
+    max-width: 650px !important;
+  }
+}
+
+@media (min-width: var(--lg)) {
+  .slick-slider-sm .slick-slider {
+    max-width: 850px !important;
+  }
+}
+
+@media (max-width: var(--sm)) {
+  .app-main__inner {
+    padding: 15px 15px 0;
+  }
+
+  .mbg-3,
+  body .card.mb-3 {
+    margin-bottom: calc(var(--grid-gutter-width) / 2) !important;
+  }
+
+  .app-page-title {
+    padding: calc(var(--grid-gutter-width) / 2);
+    margin: calc(- (var(--grid-gutter-width) / 2))
+      calc(- (var(--grid-gutter-width) / 2)) calc(var(--grid-gutter-width) / 2);
+  }
+  .app-page-title + .body-tabs-layout {
+    margin-top: (-(var(--grid-gutter-width) / 2)) !important;
+  }
+  .body-tabs-line .body-tabs-layout {
+    margin-bottom: calc(var(--grid-gutter-width) / 2);
+    margin-left: calc(- (var(--grid-gutter-width)) / 2);
+    margin-right: (-(--grid-gutter-width / 2));
+    padding: 0 15px;
+  }
+
+  .body-tabs {
+    padding: 0 calc(var(--grid-gutter-width) / 2);
+    display: block;
+  }
+  .body-tabs .nav-item .nav-link {
+    margin: 0;
+  }
+  .popover,
+  .dropdown-menu {
+    width: 80%;
+    left: 10%;
+  }
+
+  body .card-header {
+    padding: calc(var(--layout-spacer-x) / 2) var(--layout-spacer-x);
+    @apply h-auto block text-center;
+  }
+
+  body .card-header .btn-actions-pane-right {
+    padding: calc(var(--layout-spacer-x) / 2) 0 0;
+  }
+
+  body .card-header .actions-icon-btn {
+    padding: 0;
+  }
+  .card-header.card-header-tab .card-header-title {
+    display: inline-flex !important;
+    line-height: 1;
+  }
+
+  .card-header.card-header-tab > .nav {
+    margin: (var(--layout-spacer-x) / 2) 0 (-(var(--layout-spacer-x) / 2));
+    display: table !important;
+    width: 100%;
+  }
+  .card-header.card-header-tab > .nav .nav-item {
+    display: table-cell;
+  }
+
+  .header-icon {
+    display: none;
+  }
+
+  .profile-responsive-sm
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right,
+  .profile-responsive
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right {
+    display: block;
+    text-align: center;
+  }
+  .profile-responsive-sm
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right
+    .avatar-icon-wrapper,
+  .profile-responsive
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right
+    .avatar-icon-wrapper {
+    margin-right: 0 !important;
+  }
+
+  .profile-responsive-sm
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right
+    .menu-header-btn-pane,
+  .profile-responsive
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right
+    .menu-header-btn-pane {
+    margin-top: 1rem;
+  }
+
+  .slick-slider-sm .slick-slider .slick-prev {
+    left: calc(var(--grid-gutter-width) / 2);
+  }
+
+  .slick-slider-sm .slick-slider .slick-next {
+    right: calc(var(--grid-gutter-width) / 2);
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+  .profile-responsive
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right {
+    display: block;
+    text-align: center;
+  }
+  .profile-responsive
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right
+    .avatar-icon-wrapper {
+    margin-right: 0 !important;
+  }
+
+  .profile-responsive
+    .dropdown-menu-header
+    .menu-header-content.btn-pane-right
+    .menu-header-btn-pane {
+    margin-top: 1rem;
+  }
+}

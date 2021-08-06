@@ -1,0 +1,1170 @@
+/* Variables */
+
+/* Variables should follow the `--component-state-property-size` formula for
+ consistent naming. Ex: var(--nav-link-disabled-color and --modal-content-box-shadow-xs. */
+
+/* Color system */
+:root {
+  --white: #fff;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --black: #000;
+
+  /* --grays: ();*/
+  /* stylelint-disable-next-line scss/dollar-variable-default */
+  /*--grays: map-merge(
+    (
+      '100': var(--gray-100),
+      '200': var(--gray-200),
+      '300': var(--gray-300),
+      '400': var(--gray-400),
+      '500': var(--gray-500),
+      '600': var(--gray-600),
+      '700': var(--gray-700),
+      '800': var(--gray-800),
+      '900': var(--gray-900),
+    ),
+    var(--grays)
+  ); */
+
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+
+  /* --colors: (); */
+  /* stylelint-disable-next-line scss/dollar-variable-default */
+  /* --colors: map-merge(
+    (
+      'blue': var(--blue),
+      'indigo': var(--indigo),
+      'purple': var(--purple),
+      'pink': var(--pink),
+      'red': var(--red),
+      'orange': var(--orange),
+      'yellow': var(--yellow),
+      'green': var(--green),
+      'teal': var(--teal),
+      'cyan': var(--cyan),
+      'white': var(--white),
+      'gray': var(--gray-600),
+      'gray-dark': var(--gray-800),
+    ),
+    --colors
+  ); */
+
+  --primary: var(--blue);
+  --secondary: var(--gray-600);
+  --success: var(--green);
+  --info: var(--cyan);
+  --warning: var(--yellow);
+  --danger: var(--red);
+  --light: var(--gray-100);
+  --dark: var(--gray-800);
+
+  /* --theme-colors: (); */
+  /* stylelint-disable-next-line scss/dollar-variable-default */
+  /* --theme-colors: map-merge(
+    (
+      'primary': var(--primary),
+      'secondary': var(--secondary),
+      'success': var(--success),
+      'info': var(--info),
+      'warning': var(--warning),
+      'danger': var(--danger),
+      'light': var(--light),
+      'dark': var(--dark),
+    ),
+    --theme-colors
+  ); */
+
+  /* Set a specific jump point for requesting color jumps */
+  --theme-color-interval: 8%;
+
+  /* The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255. */
+  --yiq-contrasted-threshold: 150;
+
+  /* Customize the light and dark text colors for use in our YIQ color contrast function. */
+  --yiq-text-dark: var(--gray-900);
+  --yiq-text-light: var(--white);
+
+  /* // Options
+  //
+  // Quickly modify global styling by enabling or disabling optional features. */
+
+  --enable-caret: true;
+  --enable-rounded: true;
+  --enable-shadows: false;
+  --enable-gradients: false;
+  --enable-transitions: true;
+  --enable-prefers-reduced-motion-media-query: true;
+  --enable-hover-media-query: false; /*Deprecated, no longer affects any compiled CSS*/
+  --enable-grid-classes: true;
+  --enable-print-styles: true;
+  --enable-validation-icons: true;
+
+  /* // Spacing
+  //
+  // Control the default styling of most Bootstrap elements by modifying these
+  // variables. Mostly focused on spacing.
+  // You can add more entries to the --spacers map, should you need more variation. */
+
+  --spacer: 1rem;
+  /* --spacers: (); */
+  /* // stylelint-disable-next-line scss/dollar-variable-default */
+  /* --spacers: map-merge(
+    (
+      0: 0,
+      1: (
+        var(--spacer) * 0.25,
+      ),
+      2: (
+        var(--spacer) * 0.5,
+      ),
+      3: var(--spacer),
+      4: (
+        var(--spacer) * 1.5,
+      ),
+      5: (
+        var(--spacer) * 3,
+      ),
+    ),
+    var(--spacers)
+  ); */
+
+  /* // This variable affects the `.h-*` and `.w-*` classes. */
+  /* --sizes: (); */
+  /* // stylelint-disable-next-line scss/dollar-variable-default */
+  /* --sizes: map-merge(
+    (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto,
+    ),
+    var(--sizes)
+  ); */
+
+  /* // Body
+  //
+  // Settings for the `<body>` element. */
+
+  --body-bg: var(--white);
+  --body-color: var(--gray-900);
+
+  /* // Links
+  //
+  // Style anchor elements. */
+
+  --link-color: var(--primary);
+  --link-decoration: none;
+  --link-hover-color: darken(var(--link-color), 15%);
+  --link-hover-decoration: underline;
+  /* // Darken percentage for links with `.text-*` class (e.g. `.text-success`) */
+  --emphasized-link-hover-darken-percentage: 15%;
+
+  /* // Paragraphs
+  //
+  // Style p element. */
+
+  --paragraph-margin-bottom: 1rem;
+
+  /* // Grid breakpoints
+  //
+  // Define the minimum dimensions at which your layout will change,
+  // adapting to different screen sizes, for use in media queries. */
+
+  /* --grid-breakpoints: (); */
+  /* // stylelint-disable-next-line scss/dollar-variable-default */
+  /* --grid-breakpoints: map-merge(
+    (
+      xs: 0,
+      sm: 576px,
+      md: 768px,
+      lg: 992px,
+      xl: 1200px,
+    ),
+    var(--grid-breakpoints)
+  );
+  
+
+  @include _assert-ascending(var(--grid-breakpoints), '--grid-breakpoints');
+  @include _assert-starts-at-zero(var(--grid-breakpoints)); */
+  --xs: 0;
+  --sm: 576px;
+  --md: 768px;
+  --lg: 992px;
+  --xl: 1200px;
+  /* // Grid containers
+  //
+  // Define the maximum width of `.container` for different screen sizes. */
+
+  /* --container-max-widths: (); */
+  /* // stylelint-disable-next-line scss/dollar-variable-default */
+  /* --container-max-widths: map-merge(
+    (
+      sm: 540px,
+      md: 720px,
+      lg: 960px,
+      xl: 1140px,
+    ),
+    --container-max-widths
+  );
+
+  @include _assert-ascending(var(--container-max-widths), '--container-max-widths'); */
+
+  /* // Grid columns
+  //
+  // Set the number of columns and specify the width of the gutters. */
+
+  --grid-columns: 12;
+  --grid-gutter-width: 30px;
+
+  /* // Components
+  //
+  // Define common padding and border radius sizes and more. */
+
+  --line-height-lg: 1.5;
+  --line-height-sm: 1.5;
+
+  --border-width: 1px;
+  --border-color: var(--gray-300);
+
+  --border-radius: 0.25rem;
+  --border-radius-lg: 0.3rem;
+  --border-radius-sm: 0.2rem;
+
+  --rounded-pill: 50rem;
+
+  --box-shadow-sm: 0 0.125rem 0.25rem rgba(var(--black), 0.075);
+  --box-shadow: 0 0.5rem 1rem rgba(var(--black), 0.15);
+  --box-shadow-lg: 0 1rem 3rem rgba(var(--black), 0.175);
+
+  --component-active-color: var(--white);
+  --component-active-bg: var(--primary);
+
+  --caret-width: 0.3em;
+
+  --transition-base: all 0.2s ease-in-out;
+  --transition-fade: opacity 0.15s linear;
+  --transition-collapse: height 0.35s ease;
+
+  /* --embed-responsive-aspect-ratios: (); */
+  /* // stylelint-disable-next-line scss/dollar-variable-default */
+  /* --embed-responsive-aspect-ratios: join(
+    ((21 9), (16 9), (3 4), (1 1)),
+    --embed-responsive-aspect-ratios
+  ); */
+  /* 
+  // Fonts
+  //
+  // Font, line-height, and color for body text, headings, and more. */
+
+  /* // stylelint-disable value-keyword-case */
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  --font-family-base: var(--font-family-sans-serif);
+  /* // stylelint-enable value-keyword-case */
+
+  --font-size-base: 1rem; /*Assumes the browser default, typically `16px` */
+  --font-size-lg: calc(var(--font-size-base) * 1.25);
+  --font-size-sm: calc(var(--font-size-base) * 0.875);
+
+  --font-weight-lighter: lighter;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-bolder: bolder;
+
+  --font-weight-base: var(--font-weight-normal);
+  --line-height-base: 1.5;
+
+  --h1-font-size: calc(var(--font-size-base) * 2.5);
+  --h2-font-size: calc(var(--font-size-base) * 2);
+  --h3-font-size: calc(var(--font-size-base) * 1.75);
+  --h4-font-size: calc(var(--font-size-base) * 1.5);
+  --h5-font-size: calc(var(--font-size-base) * 1.25);
+  --h6-font-size: calc(var(--font-size-base));
+
+  --headings-margin-bottom: calc(var(--spacer) / 2);
+  --headings-font-family: inherit;
+  --headings-font-weight: 500;
+  --headings-line-height: 1.2;
+  --headings-color: inherit;
+
+  --display1-size: 6rem;
+  --display2-size: 5.5rem;
+  --display3-size: 4.5rem;
+  --display4-size: 3.5rem;
+
+  --display1-weight: 300;
+  --display2-weight: 300;
+  --display3-weight: 300;
+  --display4-weight: 300;
+  --display-line-height: var(--headings-line-height);
+
+  --lead-font-size: calc(var(--font-size-base) * 1.25);
+  --lead-font-weight: 300;
+
+  --small-font-size: 80%;
+
+  --text-muted: var(--gray-600);
+
+  --blockquote-small-color: var(--gray-600);
+  --blockquote-small-font-size: var(--small-font-size);
+  --blockquote-font-size: calc(var(--font-size-base) * 1.25);
+
+  --hr-border-color: rgba(var(--black), 0.1);
+  --hr-border-width: var(--border-width);
+
+  --mark-padding: 0.2em;
+
+  --dt-font-weight: var(--font-weight-bold);
+
+  --kbd-box-shadow: inset 0 -0.1rem 0 rgba(var(--black), 0.25);
+  --nested-kbd-font-weight: var(--font-weight-bold);
+
+  --list-inline-padding: 0.5rem;
+
+  --mark-bg: #fcf8e3;
+
+  --hr-margin-y: var(--spacer);
+
+  /* // Tables
+  //
+  // Customizes the `.table` component with basic values, each used across all table variations. */
+
+  --table-cell-padding: 0.75rem;
+  --table-cell-padding-sm: 0.3rem;
+
+  --table-bg: transparent;
+  --table-accent-bg: rgba(var(--black), 0.05);
+  --table-hover-bg: rgba(var(--black), 0.075);
+  --table-active-bg: var(--table-hover-bg);
+
+  --table-border-width: var(--border-width);
+  --table-border-color: var(--gray-300);
+
+  --table-head-bg: var(--gray-200);
+  --table-head-color: var(--gray-700);
+
+  --table-dark-bg: var(--gray-900);
+  --table-dark-accent-bg: rgba(var(--white), 0.05);
+  --table-dark-hover-bg: rgba(var(--white), 0.075);
+  --table-dark-border-color: lighten(var(--gray-900), 7.5%);
+  --table-dark-color: var(--white);
+
+  --table-striped-order: odd;
+
+  --table-caption-color: var(--text-muted);
+
+  --table-bg-level: -9;
+  --table-border-level: -6;
+
+  /* // Buttons + Forms
+  //
+  // Shared variables that are reassigned to `--input-` and `--btn-` specific variables. */
+
+  --input-btn-padding-y: 0.375rem;
+  --input-btn-padding-x: 0.75rem;
+  --input-btn-font-size: var(--font-size-base);
+  --input-btn-line-height: var(--line-height-base);
+
+  --input-btn-focus-width: 0.2rem;
+  --input-btn-focus-color: rgba(var(--component-active-bg), 0.25);
+  --input-btn-focus-box-shadow: 0 0 0 var(--input-btn-focus-width)
+    var(--input-btn-focus-color);
+
+  --input-btn-padding-y-sm: 0.25rem;
+  --input-btn-padding-x-sm: 0.5rem;
+  --input-btn-font-size-sm: var(--font-size-sm);
+  --input-btn-line-height-sm: var(--line-height-sm);
+
+  --input-btn-padding-y-lg: 0.5rem;
+  --input-btn-padding-x-lg: 1rem;
+  --input-btn-font-size-lg: var(--font-size-lg);
+  --input-btn-line-height-lg: var(--line-height-lg);
+
+  --input-btn-border-width: var(--border-width);
+
+  /* // Buttons
+  //
+  // For each of Bootstrap's buttons, define text, background, and border color. */
+
+  --btn-padding-y: var(--input-btn-padding-y);
+  --btn-padding-x: var(--input-btn-padding-x);
+  --btn-font-size: var(--input-btn-font-size);
+  --btn-line-height: var(--input-btn-line-height);
+
+  --btn-padding-y-sm: var(--input-btn-padding-y-sm);
+  --btn-padding-x-sm: var(--input-btn-padding-x-sm);
+  --btn-font-size-sm: var(--input-btn-font-size-sm);
+  --btn-line-height-sm: var(--input-btn-line-height-sm);
+
+  --btn-padding-y-lg: var(--input-btn-padding-y-lg);
+  --btn-padding-x-lg: var(--input-btn-padding-x-lg);
+  --btn-font-size-lg: var(--input-btn-font-size-lg);
+  --btn-line-height-lg: var(--input-btn-line-height-lg);
+
+  --btn-border-width: var(--input-btn-border-width);
+
+  --btn-font-weight: var(--font-weight-normal);
+  --btn-box-shadow: inset 0 1px 0 rgba(var(--white), 0.15),
+    0 1px 1px rgba(--black, 0.075);
+  --btn-focus-width: var(--input-btn-focus-width);
+  --btn-focus-box-shadow: var(--input-btn-focus-box-shadow);
+  --btn-disabled-opacity: 0.65;
+  --btn-active-box-shadow: inset 0 3px 5px rgba(var(--black), 0.125);
+
+  --btn-link-disabled-color: var(--gray-600);
+
+  --btn-block-spacing-y: 0.5rem;
+
+  /* // Allows for customizing button radius independently from global border radius */
+  --btn-border-radius: var(--border-radius);
+  --btn-border-radius-lg: var(--border-radius-lg);
+  --btn-border-radius-sm: var(--border-radius-sm);
+
+  --btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  /* // Forms */
+
+  --label-margin-bottom: 0.5rem;
+
+  --input-padding-y: var(--input-btn-padding-y);
+  --input-padding-x: var(--input-btn-padding-x);
+  --input-font-size: var(--input-btn-font-size);
+  --input-font-weight: var(--font-weight-base);
+  --input-line-height: var(--input-btn-line-height);
+
+  --input-padding-y-sm: var(--input-btn-padding-y-sm);
+  --input-padding-x-sm: var(--input-btn-padding-x-sm);
+  --input-font-size-sm: var(--input-btn-font-size-sm);
+  --input-line-height-sm: var(--input-btn-line-height-sm);
+
+  --input-padding-y-lg: var(--input-btn-padding-y-lg);
+  --input-padding-x-lg: var(--input-btn-padding-x-lg);
+  --input-font-size-lg: var(--input-btn-font-size-lg);
+  --input-line-height-lg: var(--input-btn-line-height-lg);
+
+  --input-bg: var(--white);
+  --input-disabled-bg: var(--gray-200);
+
+  --input-color: var(--gray-700);
+  --input-border-color: var(--gray-400);
+  --input-border-width: var(--input-btn-border-width);
+  --input-box-shadow: inset 0 1px 1px rgba(var(--black), 0.075);
+
+  --input-border-radius: var(--border-radius);
+  --input-border-radius-lg: var(--border-radius-lg);
+  --input-border-radius-sm: var(--border-radius-sm);
+
+  --input-focus-bg: var(--input-bg);
+  --input-focus-border-color: lighten(var(--component-active-bg), 25%);
+  --input-focus-color: var(--input-color);
+  --input-focus-width: var(--input-btn-focus-width);
+  --input-focus-box-shadow: var(--input-btn-focus-box-shadow);
+
+  --input-placeholder-color: var(--gray-600);
+  --input-plaintext-color: var(--body-color);
+
+  --input-height-border: calc(var(--input-border-width) * 2);
+
+  --input-height-inner: calc(
+    calc(var(--input-btn-font-size) * var(--input-btn-line-height)) +
+      calc(var(--input-btn-padding-y) * 2)
+  );
+  --input-height: calc(var(--input-height-inner) + var(--input-height-border));
+
+  --input-height-inner-sm: calc(
+    calc(var(--input-btn-font-size-sm) * var(--input-btn-line-height-sm)) +
+      calc(var(--input-btn-padding-y-sm) * 2)
+  );
+  --input-height-sm: calc(
+    var(--input-height-inner-sm) + var(--input-height-border)
+  );
+
+  --input-height-inner-lg: calc(
+    calc(var(--input-btn-font-size-lg) * var(--input-btn-line-height-lg)) +
+      calc(var(--input-btn-padding-y-lg) * 2)
+  );
+  --input-height-lg: calc(
+    var(--input-height-inner-lg) + var(--input-height-border)
+  );
+
+  --input-transition: border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  --form-text-margin-top: 0.25rem;
+
+  --form-check-input-gutter: 1.25rem;
+  --form-check-input-margin-y: 0.3rem;
+  --form-check-input-margin-x: 0.25rem;
+
+  --form-check-inline-margin-x: 0.75rem;
+  --form-check-inline-input-margin-x: 0.3125rem;
+
+  --form-grid-gutter-width: 10px;
+  --form-group-margin-bottom: 1rem;
+
+  --input-group-addon-color: var(--input-color);
+  --input-group-addon-bg: var(--gray-200);
+  --input-group-addon-border-color: var(--input-border-color);
+
+  --custom-forms-transition: background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  --custom-control-gutter: 0.5rem;
+  --custom-control-spacer-x: 1rem;
+
+  --custom-control-indicator-size: 1rem;
+  --custom-control-indicator-bg: var(--input-bg);
+
+  --custom-control-indicator-bg-size: 50% 50%;
+  --custom-control-indicator-box-shadow: var(--input-box-shadow);
+  --custom-control-indicator-border-color: var(--gray-500);
+  --custom-control-indicator-border-width: var(--input-border-width);
+
+  --custom-control-indicator-disabled-bg: var(--input-disabled-bg);
+  --custom-control-label-disabled-color: var(--gray-600);
+
+  --custom-control-indicator-checked-color: var(--component-active-color);
+  --custom-control-indicator-checked-bg: var(--component-active-bg);
+  --custom-control-indicator-checked-disabled-bg: rgba(var(--primary), 0.5);
+  --custom-control-indicator-checked-box-shadow: none;
+  --custom-control-indicator-checked-border-color: var(
+    --custom-control-indicator-checked-bg
+  );
+
+  --custom-control-indicator-focus-box-shadow: var(
+    --input-btn-focus-box-shadow
+  );
+  --custom-control-indicator-focus-border-color: var(
+    --input-focus-border-color
+  );
+
+  --custom-control-indicator-active-color: var(--component-active-color);
+  --custom-control-indicator-active-bg: lighten(
+    var(--component-active-bg),
+    35%
+  );
+  --custom-control-indicator-active-box-shadow: none;
+  --custom-control-indicator-active-border-color: var(
+    --custom-control-indicator-active-bg
+  );
+
+  --custom-checkbox-indicator-border-radius: var(--border-radius);
+  --custom-checkbox-indicator-icon-checked: str-replace(
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{--custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+
+  --custom-checkbox-indicator-indeterminate-bg: var(--component-active-bg);
+  --custom-checkbox-indicator-indeterminate-color: var(
+    --custom-control-indicator-checked-color
+  );
+  --custom-checkbox-indicator-icon-indeterminate: str-replace(
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='#{--custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+  --custom-checkbox-indicator-indeterminate-box-shadow: none;
+  --custom-checkbox-indicator-indeterminate-border-color: var(
+    --custom-checkbox-indicator-indeterminate-bg
+  );
+
+  --custom-radio-indicator-border-radius: 50%;
+  --custom-radio-indicator-icon-checked: str-replace(
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{--custom-control-indicator-checked-color}'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+
+  --custom-switch-width: calc(var(--custom-control-indicator-size) * 1.75);
+  --custom-switch-indicator-border-radius: calc(
+    var(--custom-control-indicator-size) / 2
+  );
+  --custom-switch-indicator-size: calc(
+    var(--custom-control-indicator-size) -
+      calc(var(--custom-control-indicator-border-width) * 4)
+  );
+
+  --custom-select-padding-y: var(--input-btn-padding-y);
+  --custom-select-padding-x: var(--input-btn-padding-x);
+  --custom-select-height: var(--input-height);
+  --custom-select-indicator-padding: 1rem; /*Extra padding to account for the presence of the background-image based indicator*/
+  --custom-select-font-weight: var(--input-font-weight);
+  --custom-select-line-height: var(--input-line-height);
+  --custom-select-color: var(--input-color);
+  --custom-select-disabled-color: var(--gray-600);
+  --custom-select-bg: var(--input-bg);
+  --custom-select-disabled-bg: var(--gray-200);
+  --custom-select-bg-size: 8px 10px; /*In pixels because image dimensions*/
+  --custom-select-indicator-color: var(--gray-800);
+  --custom-select-indicator: str-replace(
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='#{var(--custom-select-indicator-color)}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+  --custom-select-background: var(--custom-select-indicator) no-repeat right
+    var(--custom-select-padding-x) center / var(--custom-select-bg-size); /*Used so we can have multiple background elements (e.g., arrow and feedback icon)*/
+
+  --custom-select-feedback-icon-padding-right: calc(
+    var(--input-height-inner) * 3 / 4 + var(--custom-select-padding-x) +
+      var(--custom-select-indicator-padding)
+  );
+  --custom-select-feedback-icon-position: center right
+    calc(
+      var(--custom-select-padding-x) + var(--custom-select-indicator-padding)
+    );
+  --custom-select-feedback-icon-size: calc(var(--input-height-inner) / 2)
+    calc(var(--input-height-inner) / 2);
+
+  --custom-select-border-width: var(--input-border-width);
+  --custom-select-border-color: var(--input-border-color);
+  --custom-select-border-radius: var(--border-radius);
+  --custom-select-box-shadow: inset 0 1px 2px rgba(var(--black), 0.075);
+
+  --custom-select-focus-border-color: var(--input-focus-border-color);
+  --custom-select-focus-width: var(--input-focus-width);
+  --custom-select-focus-box-shadow: 0 0 0 var(--custom-select-focus-width)
+    rgba(var(--custom-select-focus-border-color), 0.5);
+
+  --custom-select-padding-y-sm: var(--input-padding-y-sm);
+  --custom-select-padding-x-sm: var(--input-padding-x-sm);
+  --custom-select-font-size-sm: var(--input-btn-font-size-sm);
+  --custom-select-height-sm: var(--input-height-sm);
+
+  --custom-select-padding-y-lg: var(--input-padding-y-lg);
+  --custom-select-padding-x-lg: var(--input-padding-x-lg);
+  --custom-select-font-size-lg: var(--input-btn-font-size-lg);
+  --custom-select-height-lg: var(--input-height-lg);
+
+  --custom-range-track-width: 100%;
+  --custom-range-track-height: 0.5rem;
+  --custom-range-track-cursor: pointer;
+  --custom-range-track-bg: var(--gray-300);
+  --custom-range-track-border-radius: 1rem;
+  --custom-range-track-box-shadow: inset 0 0.25rem 0.25rem
+    rgba(var(--black), 0.1);
+
+  --custom-range-thumb-width: 1rem;
+  --custom-range-thumb-height: var(--custom-range-thumb-width);
+  --custom-range-thumb-bg: var(--component-active-bg);
+  --custom-range-thumb-border: 0;
+  --custom-range-thumb-border-radius: 1rem;
+  --custom-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba(var(--black), 0.1);
+  --custom-range-thumb-focus-box-shadow: 0 0 0 1px var(--body-bg),
+    --input-focus-box-shadow;
+  --custom-range-thumb-focus-box-shadow-width: var(
+    --input-focus-width
+  ); /* For focus box shadow issue in IE/Edge*/
+  --custom-range-thumb-active-bg: lighten(var(--component-active-bg), 35%);
+  --custom-range-thumb-disabled-bg: var(--gray-500);
+
+  --custom-file-height: var(--input-height);
+  --custom-file-height-inner: var(--input-height-inner);
+  --custom-file-focus-border-color: var(--input-focus-border-color);
+  --custom-file-focus-box-shadow: var(--input-focus-box-shadow);
+  --custom-file-disabled-bg: var(--input-disabled-bg);
+
+  --custom-file-padding-y: var(--input-padding-y);
+  --custom-file-padding-x: var(--input-padding-x);
+  --custom-file-line-height: var(--input-line-height);
+  --custom-file-font-weight: var(--input-font-weight);
+  --custom-file-color: var(--input-color);
+  --custom-file-bg: var(--input-bg);
+  --custom-file-border-width: var(--input-border-width);
+  --custom-file-border-color: var(--input-border-color);
+  --custom-file-border-radius: var(--input-border-radius);
+  --custom-file-box-shadow: var(--input-box-shadow);
+  --custom-file-button-color: var(--custom-file-color);
+  --custom-file-button-bg: var(--input-group-addon-bg);
+  --custom-file-text: (en: 'Browse');
+
+  /* Form validation */
+
+  --form-feedback-margin-top: var(--form-text-margin-top);
+  --form-feedback-font-size: var(--small-font-size);
+  --form-feedback-valid-color: theme-color('success');
+  --form-feedback-invalid-color: theme-color('danger');
+
+  --form-feedback-icon-valid-color: var(--form-feedback-valid-color);
+  --form-feedback-icon-valid: str-replace(
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{--form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+  --form-feedback-icon-invalid-color: var(--form-feedback-invalid-color);
+  --form-feedback-icon-invalid: str-replace(
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{--form-feedback-icon-invalid-color}' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E"),
+    '#',
+    '%23'
+  );
+
+  /* // Dropdowns
+  //
+  // Dropdown menu container and contents. */
+
+  --dropdown-min-width: 10rem;
+  --dropdown-padding-y: 0.5rem;
+  --dropdown-spacer: 0.125rem;
+  --dropdown-bg: var(--white);
+  --dropdown-border-color: rgba(var(--black), 0.15);
+  --dropdown-border-radius: var(--border-radius);
+  --dropdown-border-width: var(--border-width);
+  --dropdown-inner-border-radius: calc(
+    var(--dropdown-border-radius) - var(--dropdown-border-width)
+  );
+  --dropdown-divider-bg: var(--gray-200);
+  --dropdown-box-shadow: 0 0.5rem 1rem rgba(var(--black), 0.175);
+
+  --dropdown-link-color: var(--gray-900);
+  --dropdown-link-hover-color: darken(var(--gray-900), 5%);
+  --dropdown-link-hover-bg: var(--gray-100);
+
+  --dropdown-link-active-color: var(--component-active-color);
+  --dropdown-link-active-bg: var(--component-active-bg);
+
+  --dropdown-link-disabled-color: var(--gray-600);
+
+  --dropdown-item-padding-y: 0.25rem;
+  --dropdown-item-padding-x: 1.5rem;
+
+  --dropdown-header-color: var(--gray-600);
+
+  /* // Z-index master list
+  //
+  // Warning: Avoid customizing these values. They're used for a bird's eye view
+  // of components dependent on the z-axis and are designed to all work together. */
+
+  --zindex-dropdown: 1000;
+  --zindex-sticky: 1020;
+  --zindex-fixed: 1030;
+  --zindex-modal-backdrop: 1040;
+  --zindex-modal: 1050;
+  --zindex-popover: 1060;
+  --zindex-tooltip: 1070;
+
+  /* // Navs */
+
+  --nav-link-padding-y: 0.5rem;
+  --nav-link-padding-x: 1rem;
+  --nav-link-disabled-color: var(--gray-600);
+
+  --nav-tabs-border-color: var(--gray-300);
+  --nav-tabs-border-width: var(--border-width);
+  --nav-tabs-border-radius: var(--border-radius);
+  --nav-tabs-link-hover-border-color: var(--gray-200) var(--gray-200)
+    var(--nav-tabs-border-color);
+  --nav-tabs-link-active-color: var(--gray-700);
+  --nav-tabs-link-active-bg: var(--body-bg);
+  --nav-tabs-link-active-border-color: var(--gray-300) var(--gray-300)
+    var(--nav-tabs-link-active-bg);
+
+  --nav-pills-border-radius: var(--border-radius);
+  --nav-pills-link-active-color: var(--component-active-color);
+  --nav-pills-link-active-bg: var(--component-active-bg);
+
+  --nav-divider-color: var(--gray-200);
+  --nav-divider-margin-y: calc(var(--spacer) / 2);
+
+  /* // Navbar */
+
+  --navbar-padding-y: calc(var(--spacer) / 2);
+  --navbar-padding-x: var(--spacer);
+
+  --navbar-nav-link-padding-x: 0.5rem;
+
+  --navbar-brand-font-size: var(--font-size-lg);
+  /* // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link */
+  --nav-link-height: calc(
+    var(--font-size-base) * var(--line-height-base) + var(--nav-link-padding-y) *
+      2
+  );
+  --navbar-brand-height: calc(
+    var(--navbar-brand-font-size) * var(--line-height-base)
+  );
+  --navbar-brand-padding-y: calc(
+    calc(var(--nav-link-height) - var(--navbar-brand-height)) / 2
+  );
+
+  --navbar-toggler-padding-y: 0.25rem;
+  --navbar-toggler-padding-x: 0.75rem;
+  --navbar-toggler-font-size: var(--font-size-lg);
+  --navbar-toggler-border-radius: var(--btn-border-radius);
+
+  --navbar-dark-color: rgba(var(--white), 0.5);
+  --navbar-dark-hover-color: rgba(var(--white), 0.75);
+  --navbar-dark-active-color: var(--white);
+  --navbar-dark-disabled-color: rgba(var(--white), 0.25);
+  --navbar-dark-toggler-icon-bg: str-replace(
+    url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{--navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+  --navbar-dark-toggler-border-color: rgba(var(--white), 0.1);
+
+  --navbar-light-color: rgba(var(--black), 0.5);
+  --navbar-light-hover-color: rgba(var(--blac) k, 0.7);
+  --navbar-light-active-color: rgba(var(--black), 0.9);
+  --navbar-light-disabled-color: rgba(var(--black), 0.3);
+  --navbar-light-toggler-icon-bg: str-replace(
+    url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{--navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+  --navbar-light-toggler-border-color: rgba(var(--black), 0.1);
+
+  --navbar-light-brand-color: var(--navbar-light-active-color);
+  --navbar-light-brand-hover-color: var(--navbar-light-active-color);
+  --navbar-dark-brand-color: var(--navbar-dark-active-color);
+  --navbar-dark-brand-hover-color: var(--navbar-dark-active-color);
+
+  /* // Pagination */
+
+  --pagination-padding-y: 0.5rem;
+  --pagination-padding-x: 0.75rem;
+  --pagination-padding-y-sm: 0.25rem;
+  --pagination-padding-x-sm: 0.5rem;
+  --pagination-padding-y-lg: 0.75rem;
+  --pagination-padding-x-lg: 1.5rem;
+  --pagination-line-height: 1.25;
+
+  --pagination-color: var(--link-color);
+  --pagination-bg: var(--white);
+  --pagination-border-width: var(--border-width);
+  --pagination-border-color: var(--gray-300);
+
+  --pagination-focus-box-shadow: var(--input-btn-focus-box-shadow);
+  --pagination-focus-outline: 0;
+
+  --pagination-hover-color: var(--link-hover-color);
+  --pagination-hover-bg: var(--gray-200);
+  --pagination-hover-border-color: var(--gray-300);
+
+  --pagination-active-color: var(--component-active-color);
+  --pagination-active-bg: var(--component-active-bg);
+  --pagination-active-border-color: var(--pagination-active-bg);
+
+  --pagination-disabled-color: var(--gray-600);
+  --pagination-disabled-bg: var(--white);
+  --pagination-disabled-border-color: var(--gray-300);
+
+  /* // Jumbotron */
+
+  --jumbotron-padding: 2rem;
+  --jumbotron-bg: var(--gray-200);
+
+  /* // Cards */
+
+  --card-spacer-y: 0.75rem;
+  --card-spacer-x: 1.25rem;
+  --card-border-width: var(--border-width);
+  --card-border-radius: var(--border-radius);
+  --card-border-color: rgba(var(--black), 0.125);
+  --card-inner-border-radius: calc(
+    var(--card-border-radius) - var(--card-border-width)
+  );
+  --card-cap-bg: rgba(var(--black), 0.03);
+  --card-cap-color: inherit;
+  --card-bg: var(--white);
+
+  --card-img-overlay-padding: 1.25rem;
+
+  --card-group-margin: calc(var(--grid-gutter-width) / 2);
+  --card-deck-margin: var(--card-group-margin);
+
+  --card-columns-count: 3;
+  --card-columns-gap: 1.25rem;
+  --card-columns-margin: var(--card-spacer-y);
+
+  /* // Tooltips */
+
+  --tooltip-font-size: var(--font-size-sm);
+  --tooltip-max-width: 200px;
+  --tooltip-color: var(--white);
+  --tooltip-bg: var(--black);
+  --tooltip-border-radius: var(--border-radius);
+  --tooltip-opacity: 0.9;
+  --tooltip-padding-y: 0.25rem;
+  --tooltip-padding-x: 0.5rem;
+  --tooltip-margin: 0;
+
+  --tooltip-arrow-width: 0.8rem;
+  --tooltip-arrow-height: 0.4rem;
+  --tooltip-arrow-color: var(--tooltip-bg);
+
+  /* // Form tooltips must come after regular tooltips */
+  --form-feedback-tooltip-padding-y: var(--tooltip-padding-y);
+  --form-feedback-tooltip-padding-x: var(--tooltip-padding-x);
+  --form-feedback-tooltip-font-size: var(--tooltip-font-size);
+  --form-feedback-tooltip-line-height: var(--line-height-base);
+  --form-feedback-tooltip-opacity: var(--tooltip-opacity);
+  --form-feedback-tooltip-border-radius: var(--tooltip-border-radius);
+
+  /* // Popovers */
+
+  --popover-font-size: var(--font-size-sm);
+  --popover-bg: var(--white);
+  --popover-max-width: 276px;
+  --popover-border-width: var(--border-width);
+  --popover-border-color: rgba(var(--black), 0.2);
+  --popover-border-radius: var(--border-radius-lg);
+  --popover-box-shadow: 0 0.25rem 0.5rem rgba(var(--black), 0.2);
+
+  --popover-header-bg: darken(var(--popover-bg), 3%);
+  --popover-header-color: var(--headings-color);
+  --popover-header-padding-y: 0.5rem;
+  --popover-header-padding-x: 0.75rem;
+
+  --popover-body-color: var(--body-color);
+  --popover-body-padding-y: var(--popover-header-padding-y);
+  --popover-body-padding-x: var(--popover-header-padding-x);
+
+  --popover-arrow-width: 1rem;
+  --popover-arrow-height: 0.5rem;
+  --popover-arrow-color: var(--popover-bg);
+
+  --popover-arrow-outer-color: fade-in(var(--popover-border-color), 0.05);
+
+  /* // Toasts */
+  --toast-max-width: 350px;
+  --toast-padding-x: 0.75rem;
+  --toast-padding-y: 0.25rem;
+  --toast-font-size: 0.875rem;
+  --toast-background-color: rgba(var(--white), 0.85);
+  --toast-border-width: 1px;
+  --toast-border-color: rgba(0, 0, 0, 0.1);
+  --toast-border-radius: 0.25rem;
+  --toast-box-shadow: 0 0.25rem 0.75rem rgba(var(--black), 0.1);
+
+  --toast-header-color: var(--gray-600);
+  --toast-header-background-color: rgba(var(--white), 0.85);
+  --toast-header-border-color: rgba(0, 0, 0, 0.05);
+
+  /* // Badges */
+
+  --badge-font-size: 75%;
+  --badge-font-weight: var(--font-weight-bold);
+  --badge-padding-y: 0.25em;
+  --badge-padding-x: 0.4em;
+  --badge-border-radius: var(--border-radius);
+
+  --badge-pill-padding-x: 0.6em;
+  /* // Use a higher than normal value to ensure completely rounded edges when
+  // customizing padding or font-size on labels. */
+  --badge-pill-border-radius: 10rem;
+
+  /* // Modals
+
+  // Padding applied to the modal body */
+  --modal-inner-padding: 1rem;
+
+  --modal-dialog-margin: 0.5rem;
+  --modal-dialog-margin-y-sm-up: 1.75rem;
+
+  --modal-title-line-height: var(--line-height-base);
+
+  --modal-content-bg: var(--white);
+  --modal-content-border-color: rgba(var(--black), 0.2);
+  --modal-content-border-width: var(--border-width);
+  --modal-content-border-radius: var(--border-radius-lg);
+  --modal-content-box-shadow-xs: 0 0.25rem 0.5rem rgba(var(--black), 0.5);
+  --modal-content-box-shadow-sm-up: 0 0.5rem 1rem rgba(var(--black), 0.5);
+
+  --modal-backdrop-bg: var(--black);
+  --modal-backdrop-opacity: 0.5;
+  --modal-header-border-color: var(--gray-200);
+  --modal-footer-border-color: var(--modal-header-border-color);
+  --modal-header-border-width: var(--modal-content-border-width);
+  --modal-footer-border-width: var(--modal-header-border-width);
+  --modal-header-padding-y: 1rem;
+  --modal-header-padding-x: 1rem;
+  --modal-header-padding: var(--modal-header-padding-y)
+    var(--modal-header-padding-x); /* Keep this for backwards compatibility*/
+
+  --modal-xl: 1140px;
+  --modal-lg: 800px;
+  --modal-md: 500px;
+  --modal-sm: 300px;
+
+  --modal-fade-transform: translate(0, -50px);
+  --modal-show-transform: none;
+  --modal-transition: transform 0.3s ease-out;
+
+  /* // Alerts
+  //
+  // Define alert colors, border radius, and padding. */
+
+  --alert-padding-y: 0.75rem;
+  --alert-padding-x: 1.25rem;
+  --alert-margin-bottom: 1rem;
+  --alert-border-radius: var(--border-radius);
+  --alert-link-font-weight: var(--font-weight-bold);
+  --alert-border-width: var(--border-width);
+
+  --alert-bg-level: -10;
+  --alert-border-level: -9;
+  --alert-color-level: 6;
+
+  /* // Progress bars */
+
+  --progress-height: 1rem;
+  --progress-font-size: calc((var--font-size-base) * 0.75);
+  --progress-bg: var(--gray-200);
+  --progress-border-radius: var(--border-radius);
+  --progress-box-shadow: inset 0 0.1rem 0.1rem rgba((var--black), 0.1);
+  --progress-bar-color: var(--white);
+  --progress-bar-bg: var(--primary);
+  --progress-bar-animation-timing: 1s linear infinite;
+  --progress-bar-transition: width 0.6s ease;
+
+  /* // List group */
+
+  --list-group-bg: var(--white);
+  --list-group-border-color: rgba((var--black), 0.125);
+  --list-group-border-width: var(--border-width);
+  --list-group-border-radius: var(--border-radius);
+
+  --list-group-item-padding-y: 0.75rem;
+  --list-group-item-padding-x: 1.25rem;
+
+  --list-group-hover-bg: var(--gray-100);
+  --list-group-active-color: var(--component-active-color);
+  --list-group-active-bg: var(--component-active-bg);
+  --list-group-active-border-color: var(--list-group-active-bg);
+
+  --list-group-disabled-color: var(--gray-600);
+  --list-group-disabled-bg: var(--list-group-bg);
+
+  --list-group-action-color: var(--gray-700);
+  --list-group-action-hover-color: var(--list-group-action-color);
+
+  --list-group-action-active-color: var(--body-color);
+  --list-group-action-active-bg: var(--gray-200);
+
+  /* // Image thumbnails */
+
+  --thumbnail-padding: 0.25rem;
+  --thumbnail-bg: var(--body-bg);
+  --thumbnail-border-width: var(--border-width);
+  --thumbnail-border-color: var(--gray-300);
+  --thumbnail-border-radius: var(--border-radius);
+  --thumbnail-box-shadow: 0 1px 2px rgba(var(--black), 0.075);
+
+  /* // Figures */
+
+  --figure-caption-font-size: 90%;
+  --figure-caption-color: var(--gray-600);
+
+  /* // Breadcrumbs */
+
+  --breadcrumb-padding-y: 0.75rem;
+  --breadcrumb-padding-x: 1rem;
+  --breadcrumb-item-padding: 0.5rem;
+
+  --breadcrumb-margin-bottom: 1rem;
+
+  --breadcrumb-bg: var(--gray-200);
+  --breadcrumb-divider-color: var(--gray-600);
+  --breadcrumb-active-color: var(--gray-600);
+  --breadcrumb-divider: quote('/');
+
+  --breadcrumb-border-radius: var(--border-radius);
+
+  /* // Carousel */
+
+  --carousel-control-color: var(--white);
+  --carousel-control-width: 15%;
+  --carousel-control-opacity: 0.5;
+  --carousel-control-hover-opacity: 0.9;
+  --carousel-control-transition: opacity 0.15s ease;
+
+  --carousel-indicator-width: 30px;
+  --carousel-indicator-height: 3px;
+  --carousel-indicator-hit-area-height: 10px;
+  --carousel-indicator-spacer: 3px;
+  --carousel-indicator-active-bg: var(--white);
+  --carousel-indicator-transition: opacity 0.6s ease;
+
+  --carousel-caption-width: 70%;
+  --carousel-caption-color: var(--white);
+
+  --carousel-control-icon-width: 20px;
+
+  --carousel-control-prev-icon-bg: str-replace(
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+  --carousel-control-next-icon-bg: str-replace(
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e"),
+    '#',
+    '%23'
+  );
+
+  --carousel-transition-duration: 0.6s;
+  --carousel-transition: transform var(--carousel-transition-duration)
+    ease-in-out; /*// Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)*/
+
+  /* // Spinners */
+
+  --spinner-width: 2rem;
+  --spinner-height: var(--spinner-width);
+  --spinner-border-width: 0.25em;
+
+  --spinner-width-sm: 1rem;
+  --spinner-height-sm: var(--spinner-width-sm);
+  --spinner-border-width-sm: 0.2em;
+
+  /* // Close */
+
+  --close-font-size: calc(var(--font-size-base) * 1.5);
+  --close-font-weight: var(--font-weight-bold);
+  --close-color: var(--black);
+  --close-text-shadow: 0 1px 0 var(--white);
+
+  /* // Code */
+
+  --code-font-size: 87.5%;
+  --code-color: var(--pink);
+
+  --kbd-padding-y: 0.2rem;
+  --kbd-padding-x: 0.4rem;
+  --kbd-font-size: var(--code-font-size);
+  --kbd-color: var(--white);
+  --kbd-bg: var(--gray-900);
+
+  --pre-color: var(--gray-900);
+  --pre-scrollable-max-height: 340px;
+
+  /* // Utilities */
+
+  --overflows: auto, hidden;
+  --positions: static, relative, absolute, fixed, sticky;
+
+  /* // Printing */
+
+  --print-page-size: a3;
+  --print-body-min-width: 992px;
+}

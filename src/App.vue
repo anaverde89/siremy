@@ -7,7 +7,7 @@
 </template>
 
 <style>
-@import './assets/css/main/layout/layout.css';
+@import './assets/css/main/base.css';
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
