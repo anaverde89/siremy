@@ -1,0 +1,27 @@
+/* Accordions */
+
+.accordion-wrapper {
+  border-radius: var(--border-radius);
+  border: var(--gray-200) solid 1px;
+}
+.accordion-wrapper > .card {
+  box-shadow: 0 0 0 0 transparent;
+}
+.accordion-wrapper > .card > .card-header {
+  padding: 1rem;
+  height: auto;
+}
+.accordion-wrapper > .card > .card-header .form-heading p {
+  margin: 0;
+}
+.accordion-wrapper > .card > .card-header .btn:active,
+.accordion-wrapper > .card > .card-header .btn:focus,
+.accordion-wrapper > .card > .card-header .btn:hover {
+  text-decoration: none;
+}
+.accordion-wrapper > .card .collapse {
+  border-bottom: transparent solid 1px;
+}
+.accordion-wrapper > .card .collapse.show {
+  border-bottom-color: var(--gray-200);
+}

@@ -58,11 +58,11 @@
 
 /*  ELEMENTS */
 
-/* @import 'elements/buttons.css';
+/* @import 'elements/buttons.css';*/
 @import 'elements/dropdown.css';
 @import 'elements/badges.css';
 @import 'elements/accordions.css';
-@import 'elements/modals.css';
+/*@import 'elements/modals.css';
 @import 'elements/timeline.css';
 @import 'elements/popovers-tooltips.css'; */
 
@@ -78,11 +78,11 @@
 
 /* Perfect Scrollbar */
 
-/* @import 'components/perfect-scrollbar/perfect-scrollbar.css'; */
+@import 'components/perfect-scrollbar/perfect-scrollbar.css';
 
 /*  Hamburger button */
 
-/* @import 'components/hamburgers/hamburgers.css'; */
+@import 'components/hamburgers/hamburgers.css';
 
 /*  Icons */
 
@@ -94,4 +94,4 @@
 
 /* DEMO */
 
-/* @import 'demo-ui/demo.css'; */
+@import 'demo-ui/demo.css';

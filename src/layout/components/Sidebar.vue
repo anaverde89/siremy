@@ -30,6 +30,8 @@
 <script>
 import { SidebarMenu } from 'vue-sidebar-menu'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   components: {

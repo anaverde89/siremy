@@ -1,0 +1,15 @@
+/* Modals */
+
+.modal-header,
+.modal-footer {
+  background: var(--gray-100);
+}
+
+.modal-footer {
+  border-bottom: var(--border-radius);
+}
+
+.modal-dialog {
+  box-shadow: var(--box-shadow-lg-default);
+  border-radius: var(--border-radius);
+}

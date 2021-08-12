@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+:root {
+  /*Settings */
+  /* ================================================== */
+  --hamburger-padding-x: 0px;
+  --hamburger-padding-y: 0px;
+  --hamburger-layer-width: 24px;
+  --hamburger-layer-height: 2px;
+  --hamburger-layer-spacing: 4px;
+  --hamburger-layer-color: --primary;
+  --hamburger-layer-border-radius: 10px;
+  --hamburger-hover-opacity: 0.7;
+  --hamburger-active-layer-color: --hamburger-layer-color;
+  --hamburger-active-hover-opacity: --hamburger-hover-opacity;
+
+  /* To use CSS filters as the hover effect instead of opacity,
+ set --hamburger-hover-use-filter as true and
+ change the value of --hamburger-hover-filter accordingly. */
+  --hamburger-hover-use-filter: false;
+  --hamburger-hover-filter: opacity(50%);
+  --hamburger-active-hover-filter: --hamburger-hover-filter;
+
+  /* Types (Remove or comment out what you don’t need)
+ ================================================== */
+  --hamburger-types: (
+    /* //3dx,
+  //3dx-r,
+  //3dy,
+  //3dy-r,
+  //3dxy,
+  //3dxy-r,
+  //arrow,
+  //arrow-r,
+  //arrowalt,
+  //arrowalt-r,
+  //arrowturn,
+  //arrowturn-r,
+  //boring,
+  //collapse,
+  //collapse-r, */
+      elastic,
+    /* //elastic-r,
+  //emphatic,
+  //emphatic-r,
+  //minus,
+  //slider,
+  //slider-r,
+  //spin,
+  //spin-r,
+  //spring,
+  //spring-r,
+  //stand,
+  //stand-r,
+  //squeeze,
+  //vortex,
+  //vortex-r */
+  );
+}
+/* Base Hamburger (We need this) */
+/* ================================================== */
+@import './base.css';
+
+/* Hamburger types */
+/* ================================================== */
+/* @import './types/3dx.css';
+@import './types/3dx-r.css';
+@import './types/3dy.css';
+@import './types/3dy-r.css';
+@import './types/3dxy.css';
+@import './types/3dxy-r.css';
+@import './types/arrow.css';
+@import './types/arrow-r.css';
+@import './types/arrowalt.css';
+@import './types/arrowalt-r.css';
+@import './types/arrowturn.css';
+@import './types/arrowturn-r.css';
+@import './types/boring.css';
+@import './types/collapse.css';
+@import './types/collapse-r.css'; */
+@import './types/elastic.css';
+/* @import './types/elastic-r.css';
+@import './types/emphatic.css';
+@import './types/emphatic-r.css';
+@import './types/minus.css';
+@import './types/slider.css';
+@import './types/slider-r.css';
+@import './types/spin.css';
+@import './types/spin-r.css';
+@import './types/spring.css';
+@import './types/spring-r.css';
+@import './types/stand.css';
+@import './types/stand-r.css';
+@import './types/squeeze.css';
+@import './types/vortex.css';
+@import './types/vortex-r.css'; */
+
+/* // ==================================================
+// Cooking up additional types:
+//
+// The Sass for each hamburger type should be nested
+// inside an @if directive to check whether or not
+// it exists in --hamburger-types so only the CSS for
+// included types are generated.
+//
+// e.g. hamburgers/types/_new-type.scss
+//
+// @if index(--hamburger-types, new-type) {
+//   .hamburger--new-type {
+//     ...
+//   }
+// } */

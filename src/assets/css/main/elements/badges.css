@@ -1,0 +1,100 @@
+/* Badges */
+
+.badge {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  min-width: 19px;
+}
+
+.badge-light {
+  background: var(--white);
+}
+
+/* Themes colors */
+.badge-primary {
+  color: var(--primary-yiq);
+  background-color: var(--primary);
+}
+a.badge-primary:hover,
+a.badge-primary:focus {
+  color: var(--primary-yiq);
+  background-color: var(--primary);
+  filter: brightness(10%);
+}
+
+.badge-secondary {
+  color: var(--secondary-yiq);
+  background-color: var(--secondary);
+}
+a.badge-secondary:hover,
+a.badge-secondary:focus {
+  color: var(--secondary-yiq);
+  background-color: var(--secondary);
+  filter: brightness(10%);
+}
+
+.badge-success {
+  color: var(--success-yiq);
+  background-color: var(--success);
+}
+a.badge-success:hover,
+a.badge-success:focus {
+  background-color: var(--success);
+  filter: brightness(10%);
+}
+
+.badge-info {
+  color: var(--info-yiq);
+  background-color: var(--info);
+}
+a.badge-info:hover,
+a.badge-info:focus {
+  color: var(--info-yiq);
+  background-color: var(--info);
+  filter: brightness(10%);
+}
+
+.badge-warning {
+  color: var(--warning-yiq);
+  background-color: var(--warning);
+}
+a.badge-warning:hover,
+a.badge-warning:focus {
+  color: var(--warning-yiq);
+  background-color: var(--warning);
+  filter: brightness(10%);
+}
+
+.badge-danger {
+  color: var(--danger-yiq);
+  background-color: var(--danger);
+}
+a.badge-danger:hover,
+a.badge-danger:focus {
+  color: var(--danger-yiq);
+  background-color: var(--danger);
+  filter: brightness(10%);
+}
+
+.badge-light {
+  color: var(--light-yiq);
+  background-color: var(--light);
+}
+a.badge-light:hover,
+a.badge-light:focus {
+  color: var(--light-yiq);
+  background-color: var(--light);
+  filter: brightness(10%);
+}
+
+.badge-dark {
+  color: var(--dark-yiq);
+  background-color: var(--dark);
+}
+a.badge-dark:hover,
+a.badge-dark:focus {
+  color: var(--dark-yiq);
+  background-color: var(--dark);
+  filter: brightness(10%);
+}

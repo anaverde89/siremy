@@ -75,6 +75,15 @@
   --light: var(--gray-100);
   --dark: var(--gray-800);
 
+  --primary-yiq: var(--yiq-text-light);
+  --secondary-yiq: var(--yiq-text-light);
+  --success-yiq: var(--yiq-text-light);
+  --info-yiq: var(--yiq-text-light);
+  --warning-yiq: var(--yiq-text-dark);
+  --danger-yiq: var(--yiq-text-light);
+  --light-yiq: var(--yiq-text-dark);
+  --dark-yiq: var(--yiq-text-light);
+
   /* --theme-colors: (); */
   /* stylelint-disable-next-line scss/dollar-variable-default */
   /* --theme-colors: map-merge(
