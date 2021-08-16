@@ -10,13 +10,13 @@
               variant="link"
               right
             >
-              <!-- <span slot="button-content"> -->
+              <!-- <template v-slot:button-content></template> -->
               <span>
                 <div class="icon-wrapper icon-wrapper-alt rounded-circle">
                   <img
                     width="42"
                     class="rounded-circle"
-                    src="@/assets/images/avatars/1.jpg"
+                    src="../../../assets/images/avatars/1.jpg"
                     alt=""
                   />
                 </div>
