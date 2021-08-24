@@ -31,21 +31,21 @@
 import Header from '@/layout/components/Header'
 import Sidebar from '@/layout/components/Sidebar'
 import Footer from '@/layout/components/Footer'
-// import VuePerfectScrollbar from 'vue3-perfect-scrollbar'
+//  import {VuePerfectScrollbar} from 'vue3-perfect-scrollbar'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCog } from '@fortawesome/free-solid-svg-icons'
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { faCog } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faCog)
+// library.add(faCog)
 export default {
   name: 'app',
   components: {
     Header,
     Sidebar,
     Footer,
-    // VuePerfectScrollbar,
-    // 'font-awesome-icon': FontAwesomeIcon,
+    //  VuePerfectScrollbar,
+    //  'font-awesome-icon': FontAwesomeIcon,
   },
   methods: {},
 }

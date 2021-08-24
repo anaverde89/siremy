@@ -4,23 +4,32 @@
       <div class="widget-content p-0">
         <div class="widget-content-wrapper">
           <div class="widget-content-left">
-            <div
+            <!-- <div
               toggle-class="p-0 mr-2"
               menu-class="dropdown-menu-lg"
               variant="link"
               right
+            > -->
+            <!-- <div class="btn-group b-dropdown dropdown">
+                <button class="btn btn-link dropdown-toggle p-0 mr-2"> -->
+            <span>
+              <!-- slot="button-content"> -->
+              <div class="icon-wrapper icon-wrapper-alt rounded-circle">
+                <img
+                  width="42"
+                  class="rounded-circle"
+                  src="@/assets/images/avatars/1.jpg"
+                  alt=""
+                />
+              </div>
+            </span>
+            <!-- </button> -->
+            <div
+              v-if="false"
+              class="dropdown-menu dropdown-menu-right dropdown-menu-lg"
+              role="menu"
+              tabindex="-1"
             >
-              <!-- <span slot="button-content"> -->
-              <span>
-                <div class="icon-wrapper icon-wrapper-alt rounded-circle">
-                  <img
-                    width="42"
-                    class="rounded-circle"
-                    src="@/assets/images/avatars/1.jpg"
-                    alt=""
-                  />
-                </div>
-              </span>
               <button type="button" tabindex="0" class="dropdown-item">
                 Menus
               </button>
@@ -36,21 +45,24 @@
                 Dividers
               </button>
             </div>
+            <!-- </div> -->
+            <!-- </div> -->
           </div>
           <div class="widget-content-left ml-3 header-user-info">
             <div class="widget-heading">Alina Mclourd</div>
             <div class="widget-subheading">VP People Manager</div>
           </div>
           <div class="widget-content-right header-user-info ml-3">
-            <!-- <button
+            <!-- <b-btn
               v-b-tooltip.hover
               title="Tooltip Example"
               class="btn-shadow p-1"
               size="sm"
               variant="info"
             > -->
-            <font-awesome-icon icon="calendar-alt" class="mr-1 ml-1" />
-            <!-- </button> -->
+            <button>
+              <font-awesome-icon icon="calendar-alt" class="mr-1 ml-1" />
+            </button>
           </div>
         </div>
       </div>

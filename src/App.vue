@@ -6,9 +6,8 @@
   <router-view />
 </template>
 
-<style>
-@import './assets/css/main/base.css';
-/* #app {
+<!-- <style>
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,5 +26,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
-} */
+}
+</style> -->
+
+<style lang="scss">
+@import './assets/css/base.scss';
 </style>

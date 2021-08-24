@@ -3,10 +3,10 @@
     <div class="logo-src" />
     <div class="app-header__content">
       <div class="app-header-left">
-        <search-box />
+        <search-box></search-box>
       </div>
       <div class="app-header-right">
-        <user-area />
+        <user-area></user-area>
       </div>
     </div>
     <div class="app-header__mobile-menu">

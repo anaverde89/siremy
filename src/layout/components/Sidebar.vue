@@ -9,7 +9,7 @@
       <div class="header__pane ml-auto">
         <button
           type="button"
-          class="hamburger close-sidebar-btn hamburger--elastic"
+          class="hamburger vsm--toggle-btn hamburger--elastic"
           v-bind:class="{ 'is-active': isOpen }"
           @click="toggleBodyClass('closed-sidebar')"
         >
@@ -21,7 +21,7 @@
     </div>
     <div class="app-sidebar-content">
       <perfect-scrollbar class="app-sidebar-scroll">
-        <sidebar-menu :menu="menu"></sidebar-menu>
+        <SidebarMenu @update:collapsed="onToggleCollapse()" :menu="menu" />
       </perfect-scrollbar>
     </div>
   </div>
@@ -29,14 +29,10 @@
 
 <script>
 import { SidebarMenu } from 'vue-sidebar-menu'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   components: {
     SidebarMenu,
-    PerfectScrollbar,
   },
   data() {
     return {
@@ -45,8 +41,7 @@ export default {
 
       menu: [
         {
-          header: true,
-          title: 'Main Navigation',
+          header: 'Main Navigation',
         },
         {
           title: 'Dashboards',
@@ -77,8 +72,7 @@ export default {
           ],
         },
         {
-          header: true,
-          title: 'UI Components',
+          header: 'UI Components',
         },
         {
           icon: 'pe-7s-diamond',
@@ -172,8 +166,7 @@ export default {
           ],
         },
         {
-          header: true,
-          title: 'Dashboard Boxes',
+          header: 'Dashboard Boxes',
         },
         {
           icon: 'pe-7s-graph2',
@@ -181,8 +174,7 @@ export default {
           href: '/widgets/chart-boxes-3',
         },
         {
-          header: true,
-          title: 'Forms',
+          header: 'Forms',
         },
         {
           icon: 'pe-7s-light',
@@ -199,8 +191,7 @@ export default {
           ],
         },
         {
-          header: true,
-          title: 'Charts',
+          header: 'Charts',
         },
         {
           icon: 'pe-7s-graph2',
@@ -251,6 +242,9 @@ export default {
       } else {
         el.classList.remove('closed-sidebar', 'closed-sidebar-md')
       }
+    },
+    onToggleCollapse(collapsed) {
+      console.log(collapsed)
     },
   },
   mounted() {
