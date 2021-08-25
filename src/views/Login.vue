@@ -82,13 +82,14 @@ export default {
   },
   methods: {
     validEmail(email) {
+      /*eslint-disable */
       let re =
-        // eslint-disable-next-line no-useless-escape
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
-
+      /*eslint-enable */
       return re.test(email)
     },
-    async onSubmit() {
+    // async onSubmit() {
+    onSubmit() {
       if (!this.email || !this.password) {
         //alert('Los campos Email y Password son requeridos')
         swal('', 'Los campos Email y Password son requeridos', 'error', {
@@ -107,34 +108,50 @@ export default {
         })
         return
       }
-      let user = {
-        email: this.email,
-        validEmail: validEmail,
-        pwd: this.password,
-      }
-      this.email = ''
-      this.password = ''
+      // let user = {
+      //   email: this.email,
+      //   validEmail: validEmail,
+      //   pwd: this.password,
+      // }
+      // this.email = ''
+      // this.password = ''
 
-      await api
-        .sendUserData(user)
+      // await api
+      //   .sendUserData(user)
+      //   .then((resp) => {
+      //     this.result = { ...resp }
+      //   })
+      //   .catch((err) => {
+      //     err
+      //   })
+
+      // if (this.result.response === 'ok') {
+      //   if (this.result.info) {
+      //     swal('', 'Sesión iniciada', 'success')
+      //     this.$router.replace('dashboard')
+      //     //window.open(this.$router.resolve('dashboard').href)
+      //   } else {
+      //     swal('', 'Usuario y/o contaseña incorrecta', 'error')
+      //   }
+      // } else if (this.result.response === 'error') {
+      //   swal(this.result.info, 'Intente más tarde', 'error')
+      // }
+      api
+        .sendUserData()
         .then((resp) => {
-          this.result = { ...resp }
+          if (
+            resp.data.user === this.email &&
+            resp.data.pwd === this.password
+          ) {
+            swal('', 'Sesión iniciada', 'success')
+            this.$router.replace('dashboard')
+          } else {
+            swal('', 'Usuario y/o contaseña incorrecta', 'error')
+          }
         })
-        .catch((err) => {
-          err
+        .catch((error) => {
+          swal(error, 'Intente más tarde', 'error')
         })
-
-      if (this.result.response === 'ok') {
-        if (this.result.info) {
-          swal('', 'Sesión iniciada', 'success')
-          this.$router.replace('dashboard')
-          //window.open(this.$router.resolve('dashboard').href)
-        } else {
-          swal('', 'Usuario y/o contaseña incorrecta', 'error')
-        }
-      } else if (this.result.response === 'error') {
-        swal(this.result.info, 'Intente más tarde', 'error')
-      }
     },
   },
 }
