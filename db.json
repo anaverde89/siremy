@@ -83,8 +83,7 @@
       "idParroquia": 2,
       "ciTerminalDesde": 0,
       "ciTerminalHasta": 21,
-      "numVotantesEventos": 778,
-      "idTecnologia": 1
+      "numVotantesEventos": 778
     },
     {
       "idMesa": "200201003_2",
@@ -279,68 +278,6 @@
       "idTecnologia": 1
     }
   ],
-  "municipios": [
-    {
-      "idMunicipio": 1,
-      "nameMunicipio": "MP. BOLIVAR"
-    },
-    {
-      "idMunicipio": 2,
-      "nameMunicipio": "MP. BRUZUAL"
-    }
-  ],
-  "niveles": [
-    {
-      "idLevel": 1,
-      "descLevel": "Root"
-    },
-    {
-      "idLevel": 2,
-      "descLevel": "Admin"
-    }
-  ],
-  "parroquias": [
-    {
-      "idParroquia": 1,
-      "nameParroquia": "CM. AROA",
-      "idMunicipio": 1
-    },
-    {
-      "idParroquia": 2,
-      "nameParroquia": "CM. CHIVACOA",
-      "idMunicipio": 2
-    }
-  ],
-  "tecnologias": [
-    {
-      "idTecnologia": 1,
-      "nameTecnologia": "INALAMBRICA/ALAMBRICA"
-    },
-    {
-      "idTecnologia": 2,
-      "nameTecnologia": "INALAMBRICA"
-    },
-    {
-      "idTecnologia": 3,
-      "nameTecnologia": "VSAT FIJA"
-    },
-    {
-      "idTecnologia": 4,
-      "nameTecnologia": "SIN FACTIBILIDAD"
-    },
-    {
-      "idTecnologia": 5,
-      "nameTecnologia": "ALAMBRICA"
-    },
-    {
-      "idTecnologia": 6,
-      "nameTecnologia": "VSAT"
-    },
-    {
-      "idTecnologia": 7,
-      "nameTecnologia": "ALAMBRICA/VSAT"
-    }
-  ],
   "users_details": [
     {
       "idUserDetail": 1,
@@ -356,15 +293,12 @@
   ],
   "users": [
     {
-      "idUserDetail": 1,
-      "userFirstName": "Ana",
-      "userSecondName": "Cecilia",
-      "userFirstLastname": "Verde",
-      "userSecondLastname": "Brandt",
-      "userFechaNac": "1989-06-08",
-      "idParroquia": 2,
-      "idCargo": 1,
-      "idUser": 1
+      "id": 1,
+      "email": "ana@ex.com",
+      "password": "1234",
+      "create_time": "2021-08-25 17:33:41",
+      "create_user": "root",
+      "idLevel": 1
     }
   ]
 }

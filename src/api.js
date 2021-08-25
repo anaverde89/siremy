@@ -26,6 +26,6 @@ const apiClient = axios.create({
 
 export default {
   sendUserData() {
-    return apiClient.get('/login')
+    return apiClient.get('/users')
   },
 }

@@ -140,8 +140,8 @@ export default {
         .sendUserData()
         .then((resp) => {
           if (
-            resp.data.user === this.email &&
-            resp.data.pwd === this.password
+            resp.data.email === this.email &&
+            resp.data.password === this.password
           ) {
             swal('', 'Sesión iniciada', 'success')
             this.$router.replace('dashboard')
@@ -150,7 +150,7 @@ export default {
           }
         })
         .catch((error) => {
-          swal(error, 'Intente más tarde', 'error')
+          swal(error.message, 'Intente más tarde', 'error')
         })
     },
   },
