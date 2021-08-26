@@ -18,8 +18,7 @@
                 <img
                   width="42"
                   class="rounded-circle"
-                  src="@/assets/images/avatars/1.jpg"
-                  alt=""
+                  :src="require(`@/assets/images/avatars/${id}.jpg`)"
                 />
               </div>
             </span>
@@ -72,8 +71,8 @@
 
 <script>
 // import VuePerfectScrollbar from 'vue3-perfect-scrollbar'
-
 import api from '@/api'
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faAngleDown,
@@ -110,6 +109,7 @@ export default {
   data: () => ({
     userName: '',
     userTitle: '',
+    path: 'assets/images/avatars/',
   }),
   props: { id: { type: Number, default: 0 } },
   methods: {},
