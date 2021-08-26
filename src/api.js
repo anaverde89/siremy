@@ -28,4 +28,10 @@ export default {
   sendUserData() {
     return apiClient.get('/users')
   },
+  getUserData(id) {
+    return apiClient.get('/users_details?idUserDetail=' + id)
+  },
+  getUserTitle(id) {
+    return apiClient.get('/cargos?idCargo=' + id)
+  },
 }

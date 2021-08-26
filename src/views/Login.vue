@@ -140,11 +140,14 @@ export default {
         .sendUserData()
         .then((resp) => {
           if (
-            resp.data.email === this.email &&
-            resp.data.password === this.password
+            resp.data[0].email === this.email &&
+            resp.data[0].password === this.password
           ) {
-            swal('', 'Sesión iniciada', 'success')
-            this.$router.replace('dashboard')
+            // swal('', 'Sesión iniciada', 'success')
+            this.$router.replace({
+              name: 'Dashboard',
+              params: { id: resp.data[0].id },
+            })
           } else {
             swal('', 'Usuario y/o contaseña incorrecta', 'error')
           }

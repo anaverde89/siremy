@@ -1,7 +1,7 @@
 <template>
   <div class="app-container app-theme-white">
     <transition name="fade" mode="out-in" appear>
-      <Header />
+      <Header :id="id" />
     </transition>
     <transition name="fade" mode="out-in" appear>
       <Sidebar />
@@ -40,6 +40,7 @@ import Footer from '@/layout/components/Footer'
 // library.add(faCog)
 export default {
   name: 'app',
+  props: { id: { type: Number, default: 0 } },
   components: {
     Header,
     Sidebar,

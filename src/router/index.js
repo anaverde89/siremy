@@ -13,6 +13,7 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+    props: true,
   },
   {
     path: '/about',

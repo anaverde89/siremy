@@ -6,7 +6,7 @@
         <search-box></search-box>
       </div>
       <div class="app-header-right">
-        <user-area></user-area>
+        <user-area :id="id"></user-area>
       </div>
     </div>
     <div class="app-header__mobile-menu">
@@ -64,7 +64,7 @@ export default {
       isOpenMobileMenu: false,
     }
   },
-  props: {},
+  props: { id: { type: Number, default: 0 } },
   methods: {
     toggleMobile(className) {
       const el = document.body

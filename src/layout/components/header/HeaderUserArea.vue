@@ -49,21 +49,21 @@
             <!-- </div> -->
           </div>
           <div class="widget-content-left ml-3 header-user-info">
-            <div class="widget-heading">Alina Mclourd</div>
-            <div class="widget-subheading">VP People Manager</div>
+            <div class="widget-heading">{{ userName }}</div>
+            <div class="widget-subheading">{{ userTitle }}</div>
           </div>
-          <div class="widget-content-right header-user-info ml-3">
-            <!-- <b-btn
+          <!-- <div class="widget-content-right header-user-info ml-3">-->
+          <!-- <b-btn
               v-b-tooltip.hover
               title="Tooltip Example"
               class="btn-shadow p-1"
               size="sm"
               variant="info"
             > -->
-            <button>
+          <!-- <button>
               <font-awesome-icon icon="calendar-alt" class="mr-1 ml-1" />
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -73,10 +73,11 @@
 <script>
 // import VuePerfectScrollbar from 'vue3-perfect-scrollbar'
 
+import api from '@/api'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faAngleDown,
-  faCalendarAlt,
+  // faCalendarAlt,
   faTrashAlt,
   faCheck,
   faFileAlt,
@@ -86,11 +87,11 @@ import {
   faFileArchive,
   faEllipsisH,
 } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(
   faAngleDown,
-  faCalendarAlt,
+  // faCalendarAlt,
   faTrashAlt,
   faCheck,
   faFileAlt,
@@ -104,10 +105,22 @@ library.add(
 export default {
   components: {
     // VuePerfectScrollbar,
-    'font-awesome-icon': FontAwesomeIcon,
+    // 'font-awesome-icon': FontAwesomeIcon,
   },
-  data: () => ({}),
-
+  data: () => ({
+    userName: '',
+    userTitle: '',
+  }),
+  props: { id: { type: Number, default: 0 } },
   methods: {},
+  created() {
+    api.getUserData(this.id).then((resp) => {
+      this.userName =
+        resp.data[0].userFirstName + ' ' + resp.data[0].userFirstLastname
+      api.getUserTitle(resp.data[0].idCargo).then((resp) => {
+        this.userTitle = resp.data[0].nameCargo
+      })
+    })
+  },
 }
 </script>
