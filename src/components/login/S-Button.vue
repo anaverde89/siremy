@@ -1,20 +1,6 @@
 <template>
   <div class="w-full flex flex-wrap justify-center">
-    <button
-      @click="$emit('custom-click')"
-      class="
-        login-form-btn
-        flex
-        justify-center
-        items-center
-        w-full
-        font-montserrat-bold
-        text-gray-800
-        hover:text-white
-        leading-1.2
-        uppercase
-      "
-    >
+    <button @click="$emit('custom-click')" class="login-form-btn">
       {{ label }}
     </button>
   </div>

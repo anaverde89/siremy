@@ -54,29 +54,60 @@ button:hover {
 
 .container-login {
   background: #f2f2f2;
+  @apply w-full
+  min-h-screen
+  flex flex-wrap
+  justify-center
+  items-center;
 }
 
 .background-white {
   background: #fff;
+  @apply w-full
+  overflow-hidden
+  flex flex-wrap
+  items-stretch
+  flex-row-reverse;
 }
 
 .login-form {
   width: 560px;
   background-color: #f7f7f7;
   padding: 173px 55px 55px 55px;
+  @apply min-h-screen block;
 }
 
 .login-form-title {
   font-size: 30px;
   color: #333333;
   padding-bottom: 43px;
+  @apply w-full
+  block
+  font-poppins-reg
+  leading-1.2
+  text-center;
 }
 
 .wrap-input {
   height: 80px;
   border: #e6e6e6;
   border-radius: 10px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  @apply flex flex-wrap
+  items-end
+  w-full
+  relative
+  border border-solid;
+}
+.wrap-input.error {
+  height: 80px;
+  border: #c80000;
+  border-radius: 10px;
+  @apply flex flex-wrap
+  items-end
+  w-full
+  relative
+  border border-solid;
 }
 
 .input {
@@ -84,6 +115,7 @@ button:hover {
   background: transparent;
   color: #555555;
   padding: 0 26px;
+  @apply block w-full font-montserrat-reg leading-1.2;
 }
 
 input.input {
@@ -98,7 +130,10 @@ input.input {
   border-radius: 10px;
   width: calc(100% + 2px);
   height: calc(100% + 2px);
-
+  top: -1px;
+  left: -1px;
+  @apply absolute block pointer-events-none border border-solid
+    opacity-0 invisible;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -117,6 +152,15 @@ input.input {
 
   padding-left: 24px;
   top: 30px;
+
+  @apply font-montserrat-reg
+  leading-1.2
+  block
+  absolute
+  pointer-events-none
+  w-full
+  left-0
+  text-left;
 
   /* -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -193,6 +237,7 @@ input.input {
   font-size: 13px;
   line-height: 1.4;
   color: #555555;
+  @apply font-poppins-reg;
 }
 
 .login-form-btn {
@@ -207,7 +252,15 @@ input.input {
 
   font-size: 12px;
   letter-spacing: 1px;
-
+  @apply flex
+justify-center
+items-center
+w-full
+font-montserrat-bold
+text-gray-800
+hover:text-white
+leading-1.2
+uppercase;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -222,6 +275,7 @@ input.input {
   background-image: url('../images/bg-01.png');
   width: calc(100% - 560px);
   z-index: 1;
+  @apply bg-no-repeat bg-cover bg-center relative;
 }
 
 .login-more::before {
@@ -234,4 +288,63 @@ input.input {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.1);
+}
+
+/* Validacion */
+.error-txt {
+  color: #c80000;
+  @apply mb-3 pl-3;
+}
+
+.alert-validate::before {
+  position: absolute;
+  z-index: 100;
+  max-width: 70%;
+  background-color: #fff;
+  border: 1px solid #c80000;
+  border-radius: 2px;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 12px;
+  pointer-events: none;
+
+  font-family: Poppins-Regular;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+  font-family: Poppins-Regular;
+  display: block;
+  position: absolute;
+  z-index: 110;
+  color: #c80000;
+  font-size: 16px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 18px;
+}
+
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
 }

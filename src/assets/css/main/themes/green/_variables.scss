@@ -43,7 +43,8 @@ $grays: map-merge(
 );
 
 //--#{$color}
-$brand: #69aa8a;
+// $brand: #69aa8a;
+$brand: #f0a500;
 $blue: #007bff;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -107,7 +108,8 @@ $card-cap-bg: $white;
 $card-border-color: rgba(darken($primary, 25%), 0.125);
 
 $dropdown-min-width: 15rem;
-$dropdown-link-hover-bg: #eafff4;
+// $dropdown-link-hover-bg: #eafff4;
+$dropdown-link-hover-bg: $gray-300;
 $dropdown-item-padding-y: 0.4rem;
 $dropdown-padding-y: 0.65rem;
 
