@@ -48,7 +48,7 @@ export default {
           icon: 'pe-7s-rocket',
           child: [
             {
-              href: '/',
+              href: '',
               title: 'Analytics',
             },
           ],
@@ -58,15 +58,15 @@ export default {
           icon: 'pe-7s-browser',
           child: [
             {
-              href: '/pages/login-boxed',
+              href: '',
               title: 'Login Boxed',
             },
             {
-              href: '/pages/register-boxed',
+              href: '',
               title: 'Register Boxed',
             },
             {
-              href: '/pages/forgot-password-boxed',
+              href: '',
               title: 'Forgot Password Boxed',
             },
           ],
@@ -83,37 +83,37 @@ export default {
               child: [
                 {
                   title: 'Standard',
-                  href: '/elements/buttons-standard',
+                  href: '',
                 },
               ],
             },
             {
               title: 'Dropdowns',
-              href: '/elements/dropdowns',
+              href: '',
             },
             {
               title: 'Icons',
-              href: '/elements/icons',
+              href: '',
             },
             {
               title: 'Badges',
-              href: '/elements/badges-labels',
+              href: '',
             },
             {
               title: 'Cards',
-              href: '/elements/cards',
+              href: '',
             },
             {
               title: 'List Groups',
-              href: '/elements/list-group',
+              href: '',
             },
             {
               title: 'Timeline',
-              href: '/elements/timelines',
+              href: '',
             },
             {
               title: 'Utilities',
-              href: '/elements/utilities',
+              href: '',
             },
           ],
         },
@@ -123,35 +123,35 @@ export default {
           child: [
             {
               title: 'Tabs',
-              href: '/components/tabs',
+              href: '',
             },
             {
               title: 'Accordions',
-              href: '/components/accordions',
+              href: '',
             },
             {
               title: 'Modals',
-              href: '/components/modals',
+              href: '',
             },
             {
               title: 'Progress Bar',
-              href: '/components/progress-bar',
+              href: '',
             },
             {
               title: 'Tooltips & Popovers',
-              href: '/components/tooltips-popovers',
+              href: '',
             },
             {
               title: 'Carousel',
-              href: '/components/carousel',
+              href: '',
             },
             {
               title: 'Pagination',
-              href: '/components/pagination',
+              href: '',
             },
             {
               title: 'Maps',
-              href: '/components/maps',
+              href: '',
             },
           ],
         },
@@ -161,7 +161,7 @@ export default {
           child: [
             {
               title: 'Regular Tables',
-              href: '/tables/regular-tables',
+              href: '',
             },
           ],
         },
@@ -171,7 +171,7 @@ export default {
         {
           icon: 'pe-7s-graph2',
           title: 'Chart Boxes',
-          href: '/widgets/chart-boxes-3',
+          href: '',
         },
         {
           header: 'Forms',
@@ -182,11 +182,11 @@ export default {
           child: [
             {
               title: 'Controls',
-              href: '/forms/controls',
+              href: '',
             },
             {
               title: 'Layouts',
-              href: '/forms/layouts',
+              href: '',
             },
           ],
         },
@@ -196,7 +196,7 @@ export default {
         {
           icon: 'pe-7s-graph2',
           title: 'ChartJS',
-          href: '/charts/chartjs',
+          href: '',
         },
       ],
       collapsed: true,
